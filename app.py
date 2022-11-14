@@ -97,7 +97,7 @@ def warp_perspective_matrix(src, dst):
 # 矩陣還原
 def my_warp_perspective(warp_img, warp_matrix):
     # for c in range(warp_img.shape):
-    fix_matrix = warp_matrix;
+    fix_matrix = warp_matrix
     a_11 = fix_matrix[0, 0]
     a_12 = fix_matrix[0, 1]
     a_13 = fix_matrix[0, 2]
@@ -133,7 +133,7 @@ def my_warp_perspective(warp_img, warp_matrix):
             if y > max_y:
                 y = max_y
             if x < 0:
-                x = 0;
+                x = 0
             if x > max_x:
                 x = max_x
 
