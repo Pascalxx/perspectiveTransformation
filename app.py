@@ -3,7 +3,7 @@ import cv2  # pip install -i https://pypi.douban.com/simple opencv-python==4.5.3
 
 
 # 滑鼠讀取圖片座標
-def OnMouse(event, x, y, flags, param):
+def on_mouse(event, x, y, flags, param):
     # EVENT_LBUTTONDOWN 左鍵點擊
     if event == cv2.EVENT_LBUTTONDOWN:
         src_point.append([x, y])
@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
     # setMouseCallback 用來處理鼠標動作的函數
     # 當鼠標事件觸發時，OnMouse()回調函數會被執行
-    cv2.setMouseCallback('image', OnMouse)  # 由左上角開始,順時針點選四個點
+    cv2.setMouseCallback('image', on_mouse)  # 由左上角開始,順時針點選四個點
 
     while 1:
         cv2.imshow("image", img)
@@ -191,7 +191,7 @@ if __name__ == '__main__':
     fix_img = (fix_img).astype(np.uint8)
     # processed = cv2.warpPerspective(img, warp_matrix, (475, 347))     # 運用cv套件
 
-    while (True):
+    while True:
         cv2.imshow('frame', fix_img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
